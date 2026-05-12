@@ -1,75 +1,57 @@
-import React from 'react';
+import React from 'react'
+import { Pressable, Text,StyleSheet } from 'react-native'
 
-import {
-  Pressable,
-  Text,
-  StyleSheet,
-} from 'react-native';
+export const  NoteCard = ({note,colors,width}) => {
+    return (
+        <Pressable
+        style={[style.card,{
+            backgroundColor : colors.card,
+            width
+        }]}
+        >
 
-import {
-  TYPOGRAPHY,
-  SPACING,
-  RADIUS,
-} from '../constants/theme';
+        <Text style={[style.title,{color : colors.text}]}>{note.title}</Text>
 
-export default function NoteCard({
-  note,
-  colors,
-}) {
-  return (
-    <Pressable
-      style={({ pressed }) => [
-        styles.card,
-        {
-          backgroundColor:
-            colors.card,
-          opacity: pressed
-            ? 0.8
-            : 1,
-        },
-      ]}
-    >
-      <Text
-        style={[
-          styles.title,
-          {
-            color:
-              colors.textPrimary,
-          },
-        ]}
-      >
-        {note.title}
-      </Text>
-
-      <Text
+        <Text
         numberOfLines={3}
-        style={[
-          styles.content,
-          {
-            color:
-              colors.textSecondary,
-          },
-        ]}
-      >
-        {note.content}
-      </Text>
-    </Pressable>
-  );
+        style={[style.title,{
+            color : colors.subText,
+            marginTop:10,
+            fontSize : 14
+        }]}
+        >{note.content}</Text>
+
+        <Text
+        style={[style.footer,{
+            color : colors.subText
+        }]}
+        >{note.date}</Text>
+      </Pressable>
+    )
 }
 
-const styles = StyleSheet.create({
-  card: {
-    padding: SPACING.base,
-    borderRadius: RADIUS.xl,
-    marginBottom: SPACING.base,
-  },
+export default NoteCard;
 
-  title: {
-    ...TYPOGRAPHY.h1,
-  },
 
-  content: {
-    ...TYPOGRAPHY.body,
-    marginTop: SPACING.sm,
-  },
-});
+const style = StyleSheet.create({
+    card:{
+        borderRadius : 24,
+        padding: 18,
+        marginBottom :16,
+    },
+    title : {
+        fontSize : 18,
+        fontWeight:"700"
+    },
+    content : {
+        marginTop : 10,
+        fontSize : 15,
+        lineHeight : 22
+    },
+    footer : {
+        marginTop:12
+    },
+    date : {
+        fontSize : 13
+    }
+})

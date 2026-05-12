@@ -1,14 +1,11 @@
 {
   "expo": {
-    "name": "NoteFlow",
-    "slug": "noteflow",
+    "name": "notes-ui",
+    "slug": "notes-ui",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
-
-    "splash": {
-      "backgroundColor": "#0A0A0F"
-    },
 
     "ios": {
       "supportsTablet": true
@@ -16,8 +13,13 @@
 
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#0A0A0F"
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundColor": "#ffffff"
       }
+    },
+
+    "web": {
+      "favicon": "./assets/images/favicon.png"
     }
   }
 }
