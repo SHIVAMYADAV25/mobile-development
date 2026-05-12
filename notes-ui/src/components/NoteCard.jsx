@@ -1,62 +1,75 @@
-import React from 'react'
-import { Pressable, Text, View,StyleSheet } from 'react-native'
+import React from 'react';
 
-export const  NoteCard = ({note,colors,width}) => {
-    return (
-      <View>
-        <Pressable
-        style={[style.card,{
-            backgroundColor : colors.card,
-            width
-        }]}
-        />
+import {
+  Pressable,
+  Text,
+  StyleSheet,
+} from 'react-native';
 
-        <Text
-        style={[style.title,{
-            color : colors.text
-        }]}
-        >{note.title}</Text>
+import {
+  TYPOGRAPHY,
+  SPACING,
+  RADIUS,
+} from '../constants/theme';
 
-        <Text style={[style.title,{color : colors.text}]}>{note.title}</Text>
+export default function NoteCard({
+  note,
+  colors,
+}) {
+  return (
+    <Pressable
+      style={({ pressed }) => [
+        styles.card,
+        {
+          backgroundColor:
+            colors.card,
+          opacity: pressed
+            ? 0.8
+            : 1,
+        },
+      ]}
+    >
+      <Text
+        style={[
+          styles.title,
+          {
+            color:
+              colors.textPrimary,
+          },
+        ]}
+      >
+        {note.title}
+      </Text>
 
-        <Text
+      <Text
         numberOfLines={3}
-        style={[style.title,{
-            color : colors.subText
-        }]}
-        >{note.content}</Text>
-
-        <Text
-        style={[style.footer,{
-            color : colors.subText
-        }]}
-        >{note.date}</Text>
-      </View>
-    )
+        style={[
+          styles.content,
+          {
+            color:
+              colors.textSecondary,
+          },
+        ]}
+      >
+        {note.content}
+      </Text>
+    </Pressable>
+  );
 }
 
-export default NoteCard;
+const styles = StyleSheet.create({
+  card: {
+    padding: SPACING.base,
+    borderRadius: RADIUS.xl,
+    marginBottom: SPACING.base,
+  },
 
+  title: {
+    ...TYPOGRAPHY.h1,
+  },
 
-const style = StyleSheet.create({
-    card:{
-        borderRadius : 24,
-        padding: 18,
-        marginBottom :16,
-    },
-    title : {
-        fontSize : 20,
-        fontWeight:"700"
-    },
-    content : {
-        marginTop : 10,
-        fontSize : 15,
-        lineHeight : 22
-    },
-    footer : {
-        marginTop:16
-    },
-    date : {
-        fontSize : 13
-    }
-})
+  content: {
+    ...TYPOGRAPHY.body,
+    marginTop: SPACING.sm,
+  },
+});
