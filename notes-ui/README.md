@@ -1,3 +1,13 @@
+## Submission Links
+
+GitHub Repository:[
+[Add Your GitHub Link Here](https://github.com/SHIVAMYADAV25/mobile-development/tree/main/notes-ui)
+
+Demo images:
+![Notes in light mode](<./assets/images/WhatsApp Image 2026-05-12 at 21.47.06 (1).jpeg>) 
+![edit image](<./assets/images/WhatsApp Image 2026-05-12 at 21.47.06.jpeg>) 
+![node in dark mode](<./assets/images/WhatsApp Image 2026-05-12 at 21.47.07.jpeg>)
+
 # Notes App UI — React Native (Expo)
 
 A modern and responsive Notes App UI built using React Native with Expo.
@@ -69,13 +79,3 @@ A modern and responsive Notes App UI built using React Native with Expo.
 * Expo
 * Context API
 * Expo Vector Icons
-
-## Submission Links
-
-GitHub Repository:
-[Add Your GitHub Link Here]
-
-Demo images:
-![Notes in light mode](<./assets/images/WhatsApp Image 2026-05-12 at 21.47.06 (1).jpeg>) 
-![edit image](<./assets/images/WhatsApp Image 2026-05-12 at 21.47.06.jpeg>) 
-![node in dark mode](<./assets/images/WhatsApp Image 2026-05-12 at 21.47.07.jpeg>)
